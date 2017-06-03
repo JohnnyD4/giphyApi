@@ -1,0 +1,18 @@
+
+
+div {
+	border: 1px solid black;
+	min-height: 200px;
+}
+
+.container {
+	min-height: 400px;
+}
+
+#gifsHere {
+	height: 200px;
+}
+
+#inputsHere {
+	height: 200px;
+}
