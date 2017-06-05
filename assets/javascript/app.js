@@ -60,6 +60,10 @@ var animate = 0;
 					$(".giphStill").on("click", function(event) {
 						console.log("hello");
 						console.log(this.value)
+						
+						// 
+						// Tim's helpful attempt, still didnt quite work
+						// 
 						if (animate == 0){ 
 							
                    			$(this).attr("src", response.data[this.value].images.fixed_width.url);
@@ -72,8 +76,9 @@ var animate = 0;
 
 
 
-
-
+                		// 
+                		// My shitty attempt that didnt really work
+                		// 
 
 					// 	if (giphImage.val == giphImage.val) {
 
