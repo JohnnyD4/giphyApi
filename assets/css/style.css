@@ -22,5 +22,11 @@ div {
 .teams {
 	margin: 5px;
 	border-radius: 10px;
+
+}
+
+.imDiv {
 	float: left;
+	margin: 10px;
+	border: px solid black;
 }
