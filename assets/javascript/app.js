@@ -24,7 +24,7 @@ var animate = 0;
 			
 			var giph = $(this).attr("data-name");
 
-			var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+			var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
 	        giph + "&api_key=dc6zaTOxFJmzC&limit=" + limit + "&offset=" + offset;
 
 	        console.log(queryURL);
