@@ -14,11 +14,11 @@ $(document).ready(function() {
 	// 
 	function displayGiphy() {
 
-		var giphImage = $("<img>");
+		
 
 		$(".teams").on("click", function() {
 			
-			offset += limit;	
+			offset = limit;	
 			
 			var giph = $(this).attr("data-name");
 
@@ -31,38 +31,58 @@ $(document).ready(function() {
 	        	url: queryURL,
 	        	method: 'GET'
 	        }).done(function(response) {
-	        	
-	        	// var giphDiv = $("<div>");
 
 	        	var results = response.data;
 
 	        	for (var i = 0; i < results.length; i++) {
+	        		
 	        		var rating = results[i].rating;
 
 	        		var p = $("<p>").text("Rating: " + rating);
 
-	        		
+	        		var giphImage = $("<img>");
+
+	        		var giphMove = $("<img>");
 
 	        		giphImage.attr({
-	        			"src": results[i].images.fixed_height.url
+	        			"src": results[i].images.fixed_height_still.url
 	        		})
 
-	        		// giphDiv.prepend(p);
-	        		
-	        		// giphDiv.prepend(giphImage);
+	        		giphMove.attr({
+							"src": results[i].images.fixed_height.url
+					})
 
 	        		$("#giphsHere").prepend(p);
 
 	        		$("#giphsHere").prepend(giphImage);
+
+					$(giphImage).on("click", function() {
+						
+						giphImage.hide();
+						
+						$("#giphsHere").prepend(giphMove);
+						
+						giphMove.show();
+						
+						displayGiphy();
+					})
+
+					$(giphMove).on("click", function() {
+						
+						giphMove.hide();
+						
+						giphImage.show();
+
+						displayGiphy();
+					})
+	        		
 	        	} 
 	        
 
 	        })
 		})
 
-		$(giphImage).on("click", function() {
-			
-		})
+		
 
 	}
 
